@@ -27,9 +27,19 @@
       "description": "Candid and portrait photography of children and families."
     },
     {
-      "slug": "personal-projects",
-      "title": "Personal Projects",
-      "description": "Fine art photography and personal creative work."
+      "slug": "flowers",
+      "title": "Flowers",
+      "description": "Fine art macro and botanical photography."
+    },
+    {
+      "slug": "roads",
+      "title": "Roads We Don't Take",
+      "description": "A personal project exploring solitude, movement, and the roads less traveled."
+    },
+    {
+      "slug": "street",
+      "title": "Street",
+      "description": "Street photography from Boston, Paris, San Francisco, and beyond."
     }
   ]
 }
