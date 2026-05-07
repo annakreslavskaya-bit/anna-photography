@@ -147,7 +147,9 @@ Always check that her dev server is running before iterating; if not, start it f
 
 ## Deployment
 
-The site is on Netlify, connected to GitHub. **Pushing to `main` auto-deploys.** Workflow:
+Full deployment documentation (pipeline, secrets, custom domain, troubleshooting) is in [PUBLISHING.md](./PUBLISHING.md).
+
+The site is on Netlify, connected to GitHub via GitHub Actions. **Pushing to `main` auto-deploys.** Workflow:
 
 ```bash
 git add .
