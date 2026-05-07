@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // with your real domain (e.g. https://janedoe-photography.com). This affects sitemap
 // URLs and the canonical link tag.
 export default defineConfig({
-  site: 'https://anna.kreslavskaya.com',
+  site: 'https://annakreslavskaya.com',
   output: 'static',
   // Use trailing slashes so URLs like /portraits/ resolve to /portraits/index.html.
   trailingSlash: 'always',
