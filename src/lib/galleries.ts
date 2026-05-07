@@ -9,6 +9,7 @@ export interface GalleryInfo {
   slug: string;
   title: string;
   description?: string;
+  cover?: GalleryImage;
   images: GalleryImage[];
 }
 
@@ -53,12 +54,20 @@ function getGalleryImages(slug: string): GalleryImage[] {
 }
 
 export function getAllGalleries(): GalleryInfo[] {
-  return galleriesData.galleries.map((gallery) => ({
-    slug: gallery.slug,
-    title: gallery.title,
-    description: gallery.description,
-    images: getGalleryImages(gallery.slug),
-  }));
+  return galleriesData.galleries.map((gallery) => {
+    const images = getGalleryImages(gallery.slug);
+    const coverFile = (gallery as any).cover;
+    const cover = coverFile
+      ? images.find((img) => img.src.includes(coverFile)) ?? images[0]
+      : images[0];
+    return {
+      slug: gallery.slug,
+      title: gallery.title,
+      description: gallery.description,
+      cover,
+      images,
+    };
+  });
 }
 
 export function getGallery(slug: string): GalleryInfo | undefined {

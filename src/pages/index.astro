@@ -14,7 +14,10 @@ const galleries = getAllGalleries();
   <section class="home-galleries" aria-label="Galleries">
     {galleries.map((gallery) => (
       <a href={`/${gallery.slug}/`} class="home-gallery-card">
-        <div class="card-placeholder">
+        {gallery.cover && (
+          <img src={gallery.cover.src} alt={gallery.cover.alt} class="card-cover" loading="lazy" />
+        )}
+        <div class="card-overlay">
           <span class="card-label">{gallery.title}</span>
         </div>
       </a>

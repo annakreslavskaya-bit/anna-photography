@@ -14,32 +14,38 @@
     {
       "slug": "creative-portraits",
       "title": "Creative Portraits",
-      "description": "Expressive portrait work — individuals, fine art concepts, and editorial."
+      "description": "Expressive portrait work — individuals, fine art concepts, and editorial.",
+      "cover": "Margo-21.jpg"
     },
     {
       "slug": "events",
       "title": "Events",
-      "description": "Weddings, performances, corporate events, banquets, and conferences."
+      "description": "Weddings, performances, corporate events, banquets, and conferences.",
+      "cover": "Ceremony-36.jpg"
     },
     {
       "slug": "children",
       "title": "Children",
-      "description": "Candid and portrait photography of children and families."
+      "description": "Candid and portrait photography of children and families.",
+      "cover": "Anya-31.jpg"
     },
     {
       "slug": "flowers",
       "title": "Flowers",
-      "description": "Fine art macro and botanical photography."
+      "description": "Fine art macro and botanical photography.",
+      "cover": "BubbleLily-1.jpg"
     },
     {
       "slug": "roads",
       "title": "Roads We Don't Take",
-      "description": "A personal project exploring solitude, movement, and the roads less traveled."
+      "description": "A personal project exploring solitude, movement, and the roads less traveled.",
+      "cover": "GirlRoad-1.jpg"
     },
     {
       "slug": "street",
       "title": "Street",
-      "description": "Street photography from Boston, Paris, San Francisco, and beyond."
+      "description": "Street photography from Boston, Paris, San Francisco, and beyond.",
+      "cover": "Paris3-11.jpg"
     }
   ]
 }
