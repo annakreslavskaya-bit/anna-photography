@@ -30,22 +30,32 @@
       "cover": "Anya-31.jpg"
     },
     {
+      "slug": "personal-projects",
+      "title": "Personal Projects",
+      "description": "Fine art photography and personal creative work — flowers, roads, and street.",
+      "cover": "BubbleLily-1.jpg",
+      "subGalleries": ["flowers", "roads", "street"]
+    },
+    {
       "slug": "flowers",
       "title": "Flowers",
       "description": "Fine art macro and botanical photography.",
-      "cover": "BubbleLily-1.jpg"
+      "cover": "BubbleLily-1.jpg",
+      "hidden": true
     },
     {
       "slug": "roads",
       "title": "Roads We Don't Take",
       "description": "A personal project exploring solitude, movement, and the roads less traveled.",
-      "cover": "GirlRoad-1.jpg"
+      "cover": "GirlRoad-1.jpg",
+      "hidden": true
     },
     {
       "slug": "street",
       "title": "Street",
       "description": "Street photography from Boston, Paris, San Francisco, and beyond.",
-      "cover": "Paris3-11.jpg"
+      "cover": "Paris3-11.jpg",
+      "hidden": true
     }
   ]
 }

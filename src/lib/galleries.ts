@@ -10,6 +10,7 @@ export interface GalleryInfo {
   title: string;
   description?: string;
   cover?: GalleryImage;
+  hidden?: boolean;
   images: GalleryImage[];
 }
 
@@ -53,21 +54,28 @@ function getGalleryImages(slug: string): GalleryImage[] {
   return entries.map((e) => e.image);
 }
 
+function buildGallery(gallery: (typeof galleriesData.galleries)[number]): GalleryInfo {
+  const images = getGalleryImages(gallery.slug);
+  const coverFile = (gallery as any).cover as string | undefined;
+  const cover = coverFile
+    ? images.find((img) => img.src.includes(coverFile)) ?? images[0]
+    : images[0];
+  return {
+    slug: gallery.slug,
+    title: gallery.title,
+    description: gallery.description,
+    hidden: (gallery as any).hidden ?? false,
+    cover,
+    images,
+  };
+}
+
 export function getAllGalleries(): GalleryInfo[] {
-  return galleriesData.galleries.map((gallery) => {
-    const images = getGalleryImages(gallery.slug);
-    const coverFile = (gallery as any).cover;
-    const cover = coverFile
-      ? images.find((img) => img.src.includes(coverFile)) ?? images[0]
-      : images[0];
-    return {
-      slug: gallery.slug,
-      title: gallery.title,
-      description: gallery.description,
-      cover,
-      images,
-    };
-  });
+  return galleriesData.galleries.map(buildGallery);
+}
+
+export function getVisibleGalleries(): GalleryInfo[] {
+  return getAllGalleries().filter((g) => !g.hidden);
 }
 
 export function getGallery(slug: string): GalleryInfo | undefined {

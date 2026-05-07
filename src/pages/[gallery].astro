@@ -6,10 +6,12 @@ import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const galleries = getAllGalleries();
-  return galleries.map((gallery) => ({
-    params: { gallery: gallery.slug },
-    props: { gallery },
-  }));
+  return galleries
+    .filter((g) => g.slug !== 'personal-projects')
+    .map((gallery) => ({
+      params: { gallery: gallery.slug },
+      props: { gallery },
+    }));
 };
 
 const { gallery } = Astro.props;

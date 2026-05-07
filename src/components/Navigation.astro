@@ -1,12 +1,12 @@
 ---
-import { getAllGalleries } from '@/lib/galleries';
+import { getVisibleGalleries } from '@/lib/galleries';
 
 interface Props {
   currentSlug?: string;
 }
 
 const { currentSlug } = Astro.props;
-const galleries = getAllGalleries();
+const galleries = getVisibleGalleries();
 ---
 <nav class="site-nav" aria-label="Main">
   <ul>

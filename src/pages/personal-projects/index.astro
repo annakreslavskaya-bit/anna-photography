@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllGalleries } from '@/lib/galleries';
+
+const subSlugs = ['flowers', 'roads', 'street'];
+const all = getAllGalleries();
+const subGalleries = subSlugs.map((slug) => all.find((g) => g.slug === slug)!).filter(Boolean);
+---
+<BaseLayout title="Personal Projects" currentSlug="personal-projects">
+  <section class="gallery">
+    <h1 class="gallery-title" style="font-style:italic; font-weight:300;">Personal Projects</h1>
+
+    <section class="home-galleries" aria-label="Personal project galleries">
+      {subGalleries.map((gallery) => (
+        <a href={`/${gallery.slug}/`} class="home-gallery-card">
+          {gallery.cover && (
+            <img src={gallery.cover.src} alt={gallery.cover.alt} class="card-cover" loading="lazy" />
+          )}
+          <div class="card-overlay">
+            <span class="card-label">{gallery.title}</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </section>
+</BaseLayout>

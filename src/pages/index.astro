@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getAllGalleries, getSiteConfig } from '@/lib/galleries';
+import { getVisibleGalleries, getSiteConfig } from '@/lib/galleries';
 
 const site = getSiteConfig();
-const galleries = getAllGalleries();
+const galleries = getVisibleGalleries();
 ---
 <BaseLayout title="Home" currentSlug="home">
   <section class="home-hero">
