@@ -29,6 +29,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
     <link rel="canonical" href={canonicalUrl} />
     <title>{pageTitle}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <!-- Open Graph (used by Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website" />

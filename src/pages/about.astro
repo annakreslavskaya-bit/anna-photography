@@ -7,28 +7,56 @@ const site = getSiteConfig();
 <BaseLayout
   title="About"
   currentSlug="about"
-  description={`About ${site.ownerName} — photographer.`}
+  description="About Anna Kreslavskaya — Boston-based photographer and artist."
 >
   <article class="info-page">
-    <h1>About</h1>
+    <h1>Anna Kreslavskaya</h1>
 
     <p>
-      {/* Replace this with a short bio. Talk about who you are, where you're based,
-          what kind of photography you do, and anything you'd like visitors to know. */}
-      I'm {site.ownerName}, a photographer based in [your city]. This is the placeholder
-      bio — replace it with your own story.
+      Anna Kreslavskaya is a Boston-based photographer and artist specializing in portraits
+      of children and adults, candid photography, flowers, fine art photography, and event
+      photography — including conferences, banquets, corporate events, proms, weddings, and
+      performances.
     </p>
+
+    <h2>Printed Publications</h2>
+    <ul>
+      <li>Harvard University Mathematics Department Annual Publication, 2022–2023</li>
+      <li>Harvard University CMES Annual Reports, 2007–2010</li>
+      <li>Fall/Winter Knot, 2011</li>
+    </ul>
+
+    <h2>Online Presence</h2>
+    <ul>
+      <li>Harvard University, Mathematics Department, 2010–2024</li>
+      <li>Harvard University, CMES, 2008–2012</li>
+      <li>TurnPark Art Space</li>
+    </ul>
+
+    <h2>Exhibitions</h2>
+    <ul>
+      <li>Wedeman Gallery, Lasell University, Newton, MA — Group, November 2025</li>
+      <li>Hopkinton Center for the Arts, Hopkinton, MA — Group, June 2025</li>
+      <li>Brickbottom Artists Association, Somerville, MA — Group, April 2025</li>
+      <li>Brickbottom Artists Association, Somerville, MA — Group, July 2024</li>
+      <li>Harvard University Staff Art Show, Gutman Library — May 2024</li>
+      <li>Yahad: Together, Somerville, MA — Group, January 2024</li>
+      <li>The Arnold Arboretum of Harvard University, 2009</li>
+    </ul>
+
+    <h2>Services</h2>
+    <ul>
+      <li>Photography services</li>
+      <li>Fine art prints</li>
+    </ul>
 
     <h2>Contact</h2>
     <p>
       {site.social.email && (
-        <>Email: <a href={`mailto:${site.social.email}`}>{site.social.email}</a><br /></>
+        <><a href={`mailto:${site.social.email}`}>{site.social.email}</a><br /></>
       )}
       {site.social.instagram && (
-        <>Instagram: <a href={site.social.instagram} target="_blank" rel="noopener noreferrer">@{site.social.instagram.split('/').filter(Boolean).pop()}</a><br /></>
-      )}
-      {site.social.facebook && (
-        <>Facebook: <a href={site.social.facebook} target="_blank" rel="noopener noreferrer">{site.social.facebook}</a></>
+        <><a href={site.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></>
       )}
     </p>
   </article>

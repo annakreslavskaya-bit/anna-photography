@@ -1,25 +1,35 @@
 {
   "site": {
-    "title": "Your Name Photography",
-    "tagline": "Photographer based in [Your City]",
-    "description": "Photography portfolio — galleries, exhibitions, and contact info.",
-    "ownerName": "Your Name",
+    "title": "Anna Kreslavskaya Photography",
+    "tagline": "Boston-based photographer and artist",
+    "description": "Portfolio of Anna Kreslavskaya — commercial photography, fine art, and personal projects based in Boston, MA.",
+    "ownerName": "Anna Kreslavskaya",
     "social": {
-      "instagram": "",
+      "instagram": "https://www.instagram.com/annakreslavskaya",
       "facebook": "",
-      "email": ""
+      "email": "anna.kreslavskaya@gmail.com"
     }
   },
   "galleries": [
     {
-      "slug": "sample-gallery-1",
-      "title": "Sample Gallery 1",
-      "description": "Replace this with a description of the gallery — a sentence or two."
+      "slug": "creative-portraits",
+      "title": "Creative Portraits",
+      "description": "Expressive portrait work — individuals, fine art concepts, and editorial."
     },
     {
-      "slug": "sample-gallery-2",
-      "title": "Sample Gallery 2",
-      "description": "Replace this with a description of the gallery — a sentence or two."
+      "slug": "events",
+      "title": "Events",
+      "description": "Weddings, performances, corporate events, banquets, and conferences."
+    },
+    {
+      "slug": "children",
+      "title": "Children",
+      "description": "Candid and portrait photography of children and families."
+    },
+    {
+      "slug": "personal-projects",
+      "title": "Personal Projects",
+      "description": "Fine art photography and personal creative work."
     }
   ]
 }

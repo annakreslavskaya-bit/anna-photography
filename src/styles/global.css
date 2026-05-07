@@ -1,28 +1,22 @@
 /* ============================================================
-   Theme — change colors / fonts / spacing here in one place.
-   Claude: when the owner asks to change the look (colors, fonts,
-   spacing, etc.), update these variables first before touching
-   the rules below.
+   Theme
    ============================================================ */
 :root {
-  /* Colors */
   --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-muted: #6a6a6a;
-  --color-border: #e5e5e5;
-  --color-accent: #1a1a1a;
+  --color-text: #111111;
+  --color-muted: #999999;
+  --color-border: #e8e8e8;
+  --color-accent: #111111;
 
-  /* Typography */
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: var(--font-body);
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cormorant Garant', Georgia, serif;
 
-  /* Layout */
-  --content-width: 1200px;
+  --content-width: 1280px;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
-  --space-4: 2rem;
-  --space-5: 3rem;
+  --space-4: 2.5rem;
+  --space-5: 5rem;
 }
 
 /* ============================================================
@@ -30,15 +24,15 @@
    ============================================================ */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
 html {
   font-family: var(--font-body);
+  font-size: 15px;
   color: var(--color-text);
   background: var(--color-bg);
-  line-height: 1.6;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -53,26 +47,22 @@ main {
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-4) var(--space-3);
+  padding: var(--space-4) var(--space-4) var(--space-5);
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-heading);
-  font-weight: 600;
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
   line-height: 1.2;
   margin: 0 0 var(--space-3);
 }
 
-h1 {
-  font-size: 2rem;
-}
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: 1.4rem; margin-top: var(--space-4); }
 
 a {
-  color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
@@ -81,16 +71,28 @@ img {
   display: block;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-3);
+}
+
+ul li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+ul li:last-child { border-bottom: none; }
+
 /* ============================================================
-   Header / Nav / Footer
+   Header
    ============================================================ */
 .site-header {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-3);
+  padding: 1.6rem var(--space-4);
   border-bottom: 1px solid var(--color-border);
   max-width: var(--content-width);
   margin: 0 auto;
@@ -98,25 +100,36 @@ img {
 }
 
 .site-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  border: none;
+}
+
+.site-nav ul li {
+  border: none;
+  padding: 0;
+  font-size: inherit;
 }
 
 .nav-link {
+  font-size: 0.88rem;
+  font-weight: 400;
   color: var(--color-muted);
-  text-decoration: none;
-  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
 }
 
 .nav-link:hover,
@@ -124,116 +137,171 @@ img {
   color: var(--color-text);
 }
 
+/* ============================================================
+   Footer
+   ============================================================ */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding: var(--space-3);
+  padding: 1.4rem var(--space-4);
   text-align: center;
   color: var(--color-muted);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* ============================================================
-   Home page
+   Homepage
    ============================================================ */
 .home-hero {
-  text-align: center;
-  padding: var(--space-5) 0;
+  padding: var(--space-4) 0 var(--space-3);
+}
+
+.home-hero h1 {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
 }
 
 .home-hero p {
+  font-size: 0.88rem;
   color: var(--color-muted);
-  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  margin: 0;
 }
 
+/* Gallery grid on homepage */
 .home-galleries {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-3);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
   margin-top: var(--space-4);
 }
 
 .home-gallery-card {
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid var(--color-border);
+  position: relative;
+  display: block;
+  background: #f4f4f4;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.home-gallery-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
   padding: var(--space-3);
-  transition: border-color 0.2s;
+  background: #f0f0f0;
 }
 
-.home-gallery-card:hover {
-  border-color: var(--color-accent);
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-.home-gallery-card h2 {
-  font-size: 1.1rem;
-  margin: 0 0 var(--space-1);
+.home-gallery-card:hover .card-placeholder {
+  background: #e8e8e8;
 }
 
-.home-gallery-card p {
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  margin: 0;
+.card-label {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.home-gallery-card:hover .card-label {
+  color: #fff;
 }
 
 /* ============================================================
-   Gallery
+   Gallery page
    ============================================================ */
 .gallery-title {
   margin-bottom: var(--space-4);
 }
 
+.gallery-title h1 {
+  font-style: italic;
+  font-weight: 300;
+}
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
 }
 
 .gallery-thumb {
   appearance: none;
-  background: none;
+  background: #f0f0f0;
   border: none;
   padding: 0;
   cursor: pointer;
   overflow: hidden;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
+  display: block;
+  width: 100%;
 }
 
 .gallery-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .gallery-thumb:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .gallery-empty {
+  grid-column: 1 / -1;
   text-align: center;
   padding: var(--space-5) var(--space-3);
   color: var(--color-muted);
 }
 
+.gallery-empty p {
+  font-size: 0.9rem;
+  margin: 0 0 var(--space-2);
+}
+
 .gallery-empty code {
-  background: var(--color-border);
-  padding: 0.1em 0.4em;
-  border-radius: 3px;
-  font-size: 0.9em;
+  background: #f4f4f4;
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+  font-size: 0.85em;
+  font-family: monospace;
 }
 
 .gallery-empty-hint {
-  font-size: 0.95rem;
-  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: var(--space-1);
 }
 
 /* ============================================================
-   Lightbox (dialog)
+   Lightbox
    ============================================================ */
 .lightbox {
   border: none;
   padding: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(5, 5, 5, 0.97);
   color: #fff;
   width: 100vw;
   height: 100vh;
@@ -242,9 +310,7 @@ img {
   margin: 0;
 }
 
-.lightbox::backdrop {
-  background: rgba(0, 0, 0, 0.8);
-}
+.lightbox::backdrop { background: rgba(0,0,0,0.9); }
 
 .lightbox[open] {
   display: grid;
@@ -255,7 +321,7 @@ img {
 
 .lightbox-image {
   max-width: 95vw;
-  max-height: 90vh;
+  max-height: 92vh;
   object-fit: contain;
 }
 
@@ -265,29 +331,21 @@ img {
   position: absolute;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 2.5rem;
+  color: rgba(255,255,255,0.55);
+  font-size: 1.4rem;
   cursor: pointer;
   padding: var(--space-2);
   line-height: 1;
+  transition: color 0.15s;
 }
 
-.lightbox-close {
-  top: var(--space-2);
-  right: var(--space-2);
-}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { color: #fff; }
 
-.lightbox-prev {
-  left: var(--space-2);
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox-next {
-  right: var(--space-2);
-  top: 50%;
-  transform: translateY(-50%);
-}
+.lightbox-close { top: var(--space-2); right: var(--space-2); }
+.lightbox-prev { left: var(--space-2); top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: var(--space-2); top: 50%; transform: translateY(-50%); }
 
 .lightbox-caption {
   position: absolute;
@@ -295,37 +353,73 @@ img {
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
 }
 
 /* ============================================================
-   About / Info pages
+   About / Info
    ============================================================ */
 .info-page {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 620px;
 }
 
 .info-page h1 {
+  font-style: italic;
+  font-weight: 300;
   margin-bottom: var(--space-4);
 }
 
+.info-page h2 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
 .info-page p {
-  margin-bottom: var(--space-3);
+  margin: 0 0 var(--space-3);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.info-page a {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color 0.15s;
+}
+
+.info-page a:hover { border-color: var(--color-text); }
+
+.info-page ul li {
+  font-size: 0.92rem;
+  color: var(--color-text);
 }
 
 /* ============================================================
-   Mobile tweaks
+   Mobile
    ============================================================ */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  main { padding: var(--space-3); }
+
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
   }
+
+  .site-nav ul { gap: var(--space-3); }
+
+  .home-galleries { grid-template-columns: 1fr; }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-1);
+    gap: 2px;
   }
 }
