@@ -15,32 +15,32 @@
       "slug": "creative-portraits",
       "title": "Creative Portraits",
       "description": "Expressive portrait work — individuals, fine art concepts, and editorial.",
-      "cover": "Margo-21.jpg"
+      "cover": "HP-31.jpg"
     },
     {
       "slug": "events",
       "title": "Events",
       "description": "Weddings, performances, corporate events, banquets, and conferences.",
-      "cover": "Ceremony-36.jpg"
+      "cover": "_MG_0232.jpg"
     },
     {
       "slug": "children",
       "title": "Children",
       "description": "Candid and portrait photography of children and families.",
-      "cover": "Luc-1.jpg"
+      "cover": "Park-12-of-19.jpg"
     },
     {
       "slug": "personal-projects",
       "title": "Personal Projects",
       "description": "Fine art photography and personal creative work — flowers, roads, and street.",
-      "cover": "BubbleLily-1.jpg",
+      "cover": "White-Magnolia-1.jpg",
       "subGalleries": ["flowers", "roads", "street"]
     },
     {
       "slug": "flowers",
       "title": "Flowers",
       "description": "Fine art macro and botanical photography.",
-      "cover": "BubbleLily-1.jpg",
+      "cover": "White-Magnolia-1.jpg",
       "hidden": true
     },
     {

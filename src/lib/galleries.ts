@@ -57,9 +57,17 @@ function getGalleryImages(slug: string): GalleryImage[] {
 function buildGallery(gallery: (typeof galleriesData.galleries)[number]): GalleryInfo {
   const images = getGalleryImages(gallery.slug);
   const coverFile = (gallery as any).cover as string | undefined;
+  const subGalleries = (gallery as any).subGalleries as string[] | undefined;
+
+  // For galleries with no images of their own (e.g. personal-projects), search sub-galleries
+  const searchImages =
+    images.length === 0 && subGalleries
+      ? subGalleries.flatMap((slug) => getGalleryImages(slug))
+      : images;
+
   const cover = coverFile
-    ? images.find((img) => img.src.includes(coverFile)) ?? images[0]
-    : images[0];
+    ? searchImages.find((img) => img.src.includes(coverFile)) ?? searchImages[0]
+    : searchImages[0];
   return {
     slug: gallery.slug,
     title: gallery.title,
