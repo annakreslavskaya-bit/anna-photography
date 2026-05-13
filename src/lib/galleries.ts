@@ -3,6 +3,7 @@ import galleriesData from '@/data/galleries.json';
 export interface GalleryImage {
   src: string;
   alt: string;
+  filename: string;
 }
 
 export interface GalleryInfo {
@@ -37,8 +38,8 @@ function getGalleryImages(slug: string): GalleryImage[] {
           filePath: path,
           image: {
             src: typeof mod.default === 'string' ? mod.default : mod.default.src,
-            // Auto-generate alt text from filename: "01-sunset-over-water.jpg" -> "01 sunset over water"
             alt: filename.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
+            filename,
           },
         });
       }
@@ -66,7 +67,7 @@ function buildGallery(gallery: (typeof galleriesData.galleries)[number]): Galler
       : images;
 
   const cover = coverFile
-    ? searchImages.find((img) => img.src.includes(coverFile)) ?? searchImages[0]
+    ? searchImages.find((img) => img.filename === coverFile) ?? searchImages[0]
     : searchImages[0];
   return {
     slug: gallery.slug,
