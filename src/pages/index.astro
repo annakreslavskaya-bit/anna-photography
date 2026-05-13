@@ -13,7 +13,7 @@ const galleries = getVisibleGalleries();
 
   <section class="home-galleries" aria-label="Galleries">
     {galleries.map((gallery) => (
-      <a href={`/${gallery.slug}/`} class="home-gallery-card">
+      <a href={`/${gallery.slug}/`} class="home-gallery-card" data-slug={gallery.slug}>
         {gallery.cover && (
           <img src={gallery.cover.src} alt={gallery.cover.alt} class="card-cover" loading="lazy" />
         )}

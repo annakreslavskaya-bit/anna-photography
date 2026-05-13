@@ -205,6 +205,13 @@ ul li:last-child { border-bottom: none; }
   transform: scale(1.04);
 }
 
+.home-gallery-card[data-slug="creative-portraits"] .card-cover {
+  transform: scale(1.12) translateY(6%);
+}
+.home-gallery-card[data-slug="creative-portraits"]:hover .card-cover {
+  transform: scale(1.16) translateY(6%);
+}
+
 .card-overlay {
   position: absolute;
   inset: 0;
