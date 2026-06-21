@@ -32,9 +32,9 @@
     {
       "slug": "personal-projects",
       "title": "Personal Projects",
-      "description": "Fine art photography and personal creative work — flowers, roads, and street.",
+      "description": "Fine art photography and personal creative work — flowers, roads, street, and sticky notes.",
       "cover": "White-Magnolia-1.jpg",
-      "subGalleries": ["flowers", "roads", "street"]
+      "subGalleries": ["flowers", "roads", "street", "sticky-notes"]
     },
     {
       "slug": "flowers",
@@ -55,6 +55,12 @@
       "title": "Street",
       "description": "Street photography from Boston, Paris, San Francisco, and beyond.",
       "cover": "Paris3-11.jpg",
+      "hidden": true
+    },
+    {
+      "slug": "sticky-notes",
+      "title": "Sticky Notes",
+      "description": "A personal project.",
       "hidden": true
     }
   ]
