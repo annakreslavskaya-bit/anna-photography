@@ -302,6 +302,51 @@ ul li:last-child { border-bottom: none; }
   margin-top: var(--space-1);
 }
 
+/* Horizontal strip layout */
+.gallery-strip {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-bottom: var(--space-3);
+  align-items: flex-start;
+}
+
+.gallery-strip-item {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.gallery-strip-item img {
+  height: 280px;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-strip-item:hover img {
+  opacity: 0.88;
+}
+
+.gallery-strip-title {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: center;
+  font-style: italic;
+  max-width: 160px;
+  line-height: 1.3;
+}
+
 /* ============================================================
    Lightbox
    ============================================================ */

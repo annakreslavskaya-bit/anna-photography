@@ -4,9 +4,10 @@ import type { GalleryImage } from '@/lib/galleries';
 interface Props {
   images: GalleryImage[];
   galleryTitle: string;
+  layout?: 'grid' | 'strip';
 }
 
-const { images, galleryTitle } = Astro.props;
+const { images, galleryTitle, layout = 'grid' } = Astro.props;
 ---
 {images.length === 0 ? (
   <div class="gallery-empty">
@@ -20,6 +21,21 @@ const { images, galleryTitle } = Astro.props;
   <div class="gallery">
     <h1 class="gallery-title">{galleryTitle}</h1>
 
+    {layout === 'strip' ? (
+      <div class="gallery-strip">
+        {images.map((image, idx) => (
+          <button
+            type="button"
+            class="gallery-strip-item"
+            data-index={idx}
+            aria-label={`Open photo ${idx + 1}: ${image.alt}`}
+          >
+            <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            <span class="gallery-strip-title">{image.alt}</span>
+          </button>
+        ))}
+      </div>
+    ) : (
     <div class="gallery-grid">
       {images.map((image, idx) => (
         <button
@@ -32,6 +48,7 @@ const { images, galleryTitle } = Astro.props;
         </button>
       ))}
     </div>
+    )}
 
     <!-- Lightbox dialog: opens when a thumbnail is clicked -->
     <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
