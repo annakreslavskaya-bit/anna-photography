@@ -60,7 +60,8 @@
     {
       "slug": "sticky-notes",
       "title": "Sticky Notes",
-      "description": "A personal project.",
+      "description": "A personal fine art series — visual notes and observations on everyday life.",
+      "cover": "Self-portrait.jpg",
       "hidden": true
     }
   ]
